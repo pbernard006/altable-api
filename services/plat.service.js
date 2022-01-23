@@ -28,10 +28,20 @@ async function editPlat(name, quantite){
     }
 }
 
+function getPlatsDispo(){
+    var plats = platRepository.getPlatsDispo();
+    if(plats != null){
+        return plats ;
+    }else{
+        return {errorMessage: "Aucun plat disponible"}
+    }
+}
+
 const platService = {
     getAllPlats,
     savePlat,
-    editPlat
+    editPlat,
+    getPlatsDispo
 };
 
 export default platService ;

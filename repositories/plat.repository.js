@@ -23,10 +23,16 @@ function savePlat(name, description, type, prix, quantite){
     return newPlat.id ;
 }
 
+async function editPlat(name, quantite){
+    const editedPlat = await PlatSchema.findOneAndUpdate({name: name}, {quantite: quantite}, {new: true});
+    return editedPlat ;
+}
+
 const platRepository = {
     getAllPlats,
     existByName,
-    savePlat
+    savePlat,
+    editPlat
 };
 
 export default platRepository ;

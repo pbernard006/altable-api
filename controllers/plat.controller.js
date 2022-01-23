@@ -9,8 +9,19 @@ var response = await platService.getAllPlats();
     }
 }
 
+async function add(req, res){
+    var response = await platService.savePlat(req.body.name, req.body.description, req.body.type, req.body.prix, req.body.quantite)
+    if(response.errorMessage != null){
+        res.status(412).json({message: response.errorMessage})
+    }
+    else{
+        res.status(201).json({platId: response.platId})
+    }
+}
+
 const platController = {
-    get
+    get,
+    add
 };
 
 export default platController ;

@@ -19,9 +19,22 @@ async function add(req, res){
     }
 }
 
+async function edit(req, res){
+    var response = await platService.editPlat(req.body.name, req.body.quantite);
+    if(response.errorMessage != null){
+        res.status(412).json({message: response.errorMessage})
+    }
+    else{
+        res.status(200).json({platName: response.platName,
+        platQuantite: response.platQuantite
+    })
+    }
+}
+
 const platController = {
     get,
-    add
+    add,
+    edit
 };
 
 export default platController ;

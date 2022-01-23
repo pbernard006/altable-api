@@ -18,9 +18,20 @@ async function savePlat(name, description, type, prix, quantite){
     }
 }
 
+async function editPlat(name, quantite){
+    var editedPlat = await platRepository.editPlat(name, quantite);
+    if(editedPlat != null){
+        return { platName: name,
+        platQuantite: quantite}
+    }else{
+        return {errorMessage: "Le plat n'existe pas"}
+    }
+}
+
 const platService = {
     getAllPlats,
-    savePlat
+    savePlat,
+    editPlat
 };
 
 export default platService ;

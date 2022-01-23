@@ -28,11 +28,17 @@ async function editPlat(name, quantite){
     return editedPlat ;
 }
 
+function getPlatsDispo(){
+    const plats = PlatSchema.find({}).where("quantite").ne(0);
+    return plats ;
+}
+
 const platRepository = {
     getAllPlats,
     existByName,
     savePlat,
-    editPlat
+    editPlat,
+    getPlatsDispo
 };
 
 export default platRepository ;

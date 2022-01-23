@@ -39,3 +39,6 @@ app.post('/add', platController.add) ;
 //Modification de la quantité d'un plat
 app.put('/edit', platController.edit) ;
 
+//Récupérer la carte
+app.get('/dispo', platController.getPlatsDispo);
+

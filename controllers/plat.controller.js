@@ -31,10 +31,21 @@ async function edit(req, res){
     }
 }
 
+async function getPlatsDispo(req, res){
+    var response = await platService.getPlatsDispo();
+    if(response.errorMessage != null){
+        res.status(412).json({message: response.errorMessage})
+    }else{
+        res.status(200).json(response)
+    }
+
+}
+
 const platController = {
     get,
     add,
-    edit
+    edit,
+    getPlatsDispo
 };
 
 export default platController ;

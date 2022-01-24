@@ -3,6 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 import platController from './plat.controller.js' ;
+import tableController from './table.controller.js' ;
 
 const app = express() ;
 const PORT = 8080 ;
@@ -41,4 +42,7 @@ app.put('/edit', platController.edit) ;
 
 //Récupérer la carte
 app.get('/dispo', platController.getPlatsDispo);
+
+//Ajouter une table
+app.post('/table/add', tableController.addTable);
 

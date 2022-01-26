@@ -16,9 +16,16 @@ function saveTable(numero, convive){
     return newTable.numero ;
 }
 
+async function getConvive(table){
+    var table = await TableSchema.findOne({numero: table.numero}).exec;
+    var nbConvive = table.convive ;
+    return nbConvive ;
+}
+
 const tableRepository = {
     existByNumero,
-    saveTable
+    saveTable,
+    getConvive
 };
 
 export default tableRepository ;

@@ -1,1 +1,2 @@
 Pour lancer le serveur : node controllers/app.js
+Pour lancer les tests : Lancer le serveur + npm run test

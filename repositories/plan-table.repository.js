@@ -8,7 +8,7 @@ async function existByName(name){
 }
 
 async function savePlanTable(name, table){
-    const newPlanTable = new PlanTableSchema({
+    const newPlanTable = new PlanTable({
         name: name,
         table: table
     })

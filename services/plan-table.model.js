@@ -1,5 +1,5 @@
 import mongoose from 'mongoose' ;
-import Table from "./plat.model.js" ;
+import Table from "./table.model.js" ;
 
 const PlanTableSchema = new mongoose.Schema({
     name: {

@@ -16,8 +16,8 @@ function saveTable(numero, convive){
     return newTable.numero ;
 }
 
-async function getConvive(table){
-    var table = await TableSchema.findOne({numero: table.numero}).exec;
+async function getConvive(numero){
+    var table = await TableSchema.findOne({numero: numero}).exec;
     var nbConvive = table.convive ;
     return nbConvive ;
 }

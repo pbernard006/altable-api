@@ -29,4 +29,4 @@ const planTableService = {
     savePlanTable
 };
 
-export default planTableService ;
+export default planTableService;
